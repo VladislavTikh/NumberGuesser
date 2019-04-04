@@ -1,0 +1,10 @@
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\bin\Debug\NumberGuesser.exe.config
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\bin\Debug\NumberGuesser.exe
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\bin\Debug\NumberGuesser.pdb
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\obj\Debug\NumberGuesser.csprojAssemblyReference.cache
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\obj\Debug\NumberGuesser.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\obj\Debug\NumberGuesser.exe
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\obj\Debug\NumberGuesser.pdb
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\bin\Debug\DataAccess.dll
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\bin\Debug\DataAccess.pdb
+C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\NumberGuesser\obj\Debug\NumberGuesser.csproj.CopyComplete
