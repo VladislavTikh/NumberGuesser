@@ -1,4 +1,5 @@
 ﻿using DataAcces.Models;
+using DataAccess.IRepository;
 using DataAccess.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace DataAccess.Models
     /// Base class of repository
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class BaseRepository<T> where T : BaseModel
+    public abstract class BaseRepository<T>:IBaseRepository<T> where T : BaseModel
     {
         #region Private Members
         private string ApplicationDirectory = Environment.CurrentDirectory;
@@ -29,7 +30,7 @@ namespace DataAccess.Models
                 Directory.CreateDirectory(path);
         }
         #endregion
-        private string CreateFullPath(long id)
+        public string CreateFullPath(long id)
         {
             var appPath = Environment.CurrentDirectory;
             var fileName = $"{id}.json";

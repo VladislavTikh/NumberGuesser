@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NumberGuesser.Validators
 {
+    /// <summary>
+    /// Ensures number in range of min max values
+    /// </summary>
     public class MinMaxValueValidator : IValidator<int>
     {
         private int _minValue;

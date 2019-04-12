@@ -1,6 +1,5 @@
 C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\DataAccess\bin\Debug\DataAccess.dll
 C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\DataAccess\bin\Debug\DataAccess.pdb
-C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
 C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\lenovo\Desktop\учеба\EPAM .NET labs\NumberGuesser\DataAccess\obj\Debug\DataAccess.pdb

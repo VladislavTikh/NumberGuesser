@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace NumberGuesser.Validators
 {
-    class MinValueValidator : IValidator<int>
+    /// <summary>
+    /// Ensures number is bigger or equal min
+    /// </summary>
+    public class MinValueValidator : IValidator<int>
     {
         private int _minValue;
         public bool IsValid { get; set; }

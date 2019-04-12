@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace NumberGuesser.Validators
 {
-    class LoginValidator : IValidator<string>
+    /// <summary>
+    /// Ensures that login is valid
+    /// </summary>
+    public class LoginValidator : IValidator<string>
     {
         private char [] invalidSymbols = {'*','.',',',' ','/' };
         public bool IsValid { get; set; }

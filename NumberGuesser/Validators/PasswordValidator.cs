@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NumberGuesser.Validators
 {
+    /// <summary>
+    /// Ensures password is valid
+    /// </summary>
     class PasswordValidator : IValidator<string>
     {
         public bool IsValid { get; set; }

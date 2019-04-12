@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NumberGuesser
 {
-    class GameView
+    public class GameView
     {
         private GameModel model;
 

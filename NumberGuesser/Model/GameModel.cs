@@ -1,22 +1,27 @@
-﻿using DataAccess.Models;
+﻿using DataAccess.IRepository;
+using DataAccess.Models;
 using DataAccess.Repository;
 using NumberGuesser.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+[assembly: InternalsVisibleTo("NumberGuesserTest")]
 namespace NumberGuesser.Model
 {
-    class GameModel
+    public class GameModel
     {
         #region Constructor
-        public GameModel(Player player1)
+        public GameModel(Player player1, GameData data, IPlayerRepository repo)
         {
             this.player1 = player1;
+            info = data;
+            PlayerRepository = repo;
         }
         #endregion
+        private IPlayerRepository PlayerRepository;
         #region Public Properties
         public Player player1 {get;private set;}
         public delegate void UI();
@@ -30,28 +35,27 @@ namespace NumberGuesser.Model
             InitialStage();
             GuessStage();
             EndStage();
+            StageChanged();
         }
         #region GameStages
         /// <summary>
         /// EndStage stage updates statistics
         /// </summary>
-        private void EndStage()
+        internal void EndStage()
         {
-            var repo = new PlayerRepository();
             player1.Score += info.Attempts - attempts;
             player1.Level = player1.Score / 10;
             if (win)
                 player1.Wins++;
             else
                 player1.Loses++;
-            repo.Save(player1);
-            StageChanged();
+            PlayerRepository.Save(player1);
         }
 
         private void InitialStage()
         {
-            StageChanged();
-           info = new GameData();
+           StageChanged();
+           info.Initialize();
         }
         /// <summary>
         /// Guess the number

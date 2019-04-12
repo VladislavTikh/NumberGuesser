@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberGuesser", "NumberGues
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{2B481C4D-E252-4708-91AD-2D3812EF3A9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberGuesserTest", "NumberGuesserTest\NumberGuesserTest.csproj", "{49C15B6D-9721-4E48-948B-B9BC2EE593FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{2B481C4D-E252-4708-91AD-2D3812EF3A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B481C4D-E252-4708-91AD-2D3812EF3A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B481C4D-E252-4708-91AD-2D3812EF3A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49C15B6D-9721-4E48-948B-B9BC2EE593FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49C15B6D-9721-4E48-948B-B9BC2EE593FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49C15B6D-9721-4E48-948B-B9BC2EE593FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49C15B6D-9721-4E48-948B-B9BC2EE593FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

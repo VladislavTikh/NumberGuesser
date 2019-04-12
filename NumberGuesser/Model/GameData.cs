@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NumberGuesser.Model
 {
-    class GameData
+    public class GameData
     {
         #region Public Properties
         /// <summary>
@@ -20,14 +20,12 @@ namespace NumberGuesser.Model
         #endregion
         #region Constructor
         public GameData()
-        {
-            Initialize();
-        }
+        {        }
         #endregion
         /// <summary>
         /// Sets range of numbers to guess and number itself
         /// </summary>
-        private void Initialize()
+        public void Initialize()
         {
             Console.WriteLine("Enter min number you can guess");
             MinNumber = InputHandler.GetCorrectNumber();

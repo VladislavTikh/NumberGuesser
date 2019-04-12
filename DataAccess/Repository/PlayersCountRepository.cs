@@ -1,4 +1,5 @@
-﻿using DataAccess.Models;
+﻿using DataAccess.IRepository;
+using DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace DataAccess.Repository
     /// <summary>
     /// Number of unique players 
     /// </summary>
-    public class PlayersCountRepository : BaseRepository<PlayersCount>
+    public class PlayersCountRepository : BaseRepository<PlayersCount>,IPlayersCountRepository
     {
         public PlayersCountRepository() : base("PlayersCount")
         {}

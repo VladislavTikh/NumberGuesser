@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace NumberGuesser.Validators
 {
-    class StringValidator : IValidator<string>
+    /// <summary>
+    /// Ensures number can be extracted from string
+    /// </summary>
+    public class StringValidator : IValidator<string>
     {
         private int _number;
 

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Repository;
+using NumberGuesser.Authorizations;
 
 namespace NumberGuesser
 {
@@ -13,10 +14,11 @@ namespace NumberGuesser
     {
         static void Main(string[] args)
         {
-            Player player;
-            var auto = new Authorization();
-            player = auto.Authorize();
-            var game = new GameModel(player);
+            var dac = new DataAccessKeeper();
+            var auto = new Authorization(new AccountCreator(dac),new LoginHandler(dac));
+            var player = auto.Authorize();
+            var gameInfo = new GameData();
+            var game = new GameModel(player,gameInfo,new PlayerRepository());
             var view = new GameView(game);
             game.PlayGame();
             Console.ReadKey();
