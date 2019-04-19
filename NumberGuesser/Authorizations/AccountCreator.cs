@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace NumberGuesser
 {
-    public class AccountCreator:IAccountCreator
+    public class AccountCreator : IAccountCreator
     {
-       private IDataAccessKeeper _keeper;
+        private IDataAccessKeeper _keeper;
 
         public AccountCreator(IDataAccessKeeper keeper) => _keeper = keeper;
-       
+
         /// <summary>
         /// Create new unique entity
         /// </summary>
@@ -23,14 +23,22 @@ namespace NumberGuesser
         {
             Player createdPlayer;
             Console.Clear();
-            if (_keeper.GetAccount(login, password) != null)                
+            if (_keeper.GetAccount(login, password) != null)
                 createdPlayer = null;
             else
             {
                 var playerInfo = _keeper.GetPlayersCount();
                 var newID = ++playerInfo;
-                createdPlayer= new Player { ID = newID, Score = 0, Login = login,
-                    Password = password, Level = 0, Wins = 0, Loses = 0 };
+                createdPlayer = new Player
+                {
+                    ID = newID,
+                    Score = 0,
+                    Login = login,
+                    Password = password,
+                    Level = 0,
+                    Wins = 0,
+                    Loses = 0
+                };
                 _keeper.UpdatePlayersCount(playerInfo);
             }
             return createdPlayer;

@@ -69,6 +69,7 @@
     <Compile Include="IAuthorization\ILoginHandlercs.cs" />
     <Compile Include="Model\GameData.cs" />
     <Compile Include="Model\GameModel.cs" />
+    <Compile Include="Model\IGameData.cs" />
     <Compile Include="Validators\LoginValidator.cs" />
     <Compile Include="Validators\PasswordValidator.cs" />
     <Compile Include="View\GameView.cs" />

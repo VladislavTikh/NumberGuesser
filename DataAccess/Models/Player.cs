@@ -12,7 +12,7 @@ namespace DataAccess.Models
     /// Player that is stored in PlayersRepo
     /// </summary>
     [DataContract]
-    public class Player : BaseModel
+    public class Player : BaseModel,IPlayer
     {
         [DataMember]
         public string Login { get; set; }

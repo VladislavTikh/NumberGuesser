@@ -14,77 +14,83 @@ namespace NumberGuesser.Model
     public class GameModel
     {
         #region Constructor
-        public GameModel(Player player1, GameData data, IPlayerRepository repo)
+        public GameModel(IPlayer player1, IPlayerRepository repo, IGameData data)
         {
             this.player1 = player1;
-            info = data;
             PlayerRepository = repo;
+            info = data;
         }
         #endregion
         private IPlayerRepository PlayerRepository;
         #region Public Properties
-        public Player player1 {get;private set;}
+        public IPlayer player1 { get; private set; }
         public delegate void UI();
         public event UI StageChanged;
-        public GameData info { get; private set; }
-        public bool win { get; private set; } = false;
-        public int attempts { get; private set; }
+        public IGameData info { get; private set; }
+        public bool win { get; internal set; } = false;
+        public int attempts { get; internal set; }
         #endregion
         public void PlayGame()
         {
             InitialStage();
+            StageChanged();
             GuessStage();
-            EndStage();
+            EndStage(info.Attempts);
             StageChanged();
         }
         #region GameStages
         /// <summary>
         /// EndStage stage updates statistics
         /// </summary>
-        internal void EndStage()
+        internal void EndStage(int Attempts)
         {
-            player1.Score += info.Attempts - attempts;
+            player1.Score += Attempts - attempts;
             player1.Level = player1.Score / 10;
             if (win)
                 player1.Wins++;
             else
                 player1.Loses++;
-            PlayerRepository.Save(player1);
+            PlayerRepository.Save(player1 as Player);
         }
 
         private void InitialStage()
         {
-           StageChanged();
-           info.Initialize();
+            StageChanged();
+            info.Initialize();
         }
         /// <summary>
         /// Guess the number
         /// </summary>
+
         private void GuessStage()
         {
-            StageChanged();         
             attempts = 0;
-            int number;
             do
             {
                 Console.WriteLine($"Attempt {++attempts} / {info.Attempts}. Min :{info.MinNumber} Max :{info.MaxNumber}");
-                number = InputHandler.GetCorrectNumber(new MinMaxValueValidator(info.MinNumber, info.MaxNumber));
-                if (number > info.GuessedNumber)
-                {
-                    Console.WriteLine($"{number} > guessed number");
-                    info.MaxNumber = number;
-                }
-                if (number < info.GuessedNumber)
-                {
-                    Console.WriteLine($"{number} < guessed number");
-                    info.MinNumber = number;
-                }
-                if (number == info.GuessedNumber)
-                {
-                    win = true;
-                }
+                NumberAnalysis(
+                    InputHandler.GetCorrectNumber
+                    (new MinMaxValueValidator(info.MinNumber, info.MaxNumber)));
+
             } while (!win && attempts < info.Attempts);
         }
         #endregion
+        internal void NumberAnalysis(int num)
+        {
+            if (num > info.GuessedNumber)
+            {
+                Console.WriteLine($"{num} > guessed number");
+                info.MaxNumber = num;
+            }
+            if (num < info.GuessedNumber)
+            {
+                Console.WriteLine($"{num} < guessed number");
+                info.MinNumber = num;
+            }
+            if (num == info.GuessedNumber)
+            {
+                win = true;
+            }
+        }
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="IRepository\IBaseRepository.cs" />
     <Compile Include="IRepository\IPlayerRepository.cs" />
     <Compile Include="IRepository\IPlayersCountRepository.cs" />
+    <Compile Include="Models\IPlayer.cs" />
     <Compile Include="Serializer\JsonSerializer.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Player.cs" />

@@ -15,10 +15,10 @@ namespace NumberGuesser
         static void Main(string[] args)
         {
             var dac = new DataAccessKeeper();
-            var auto = new Authorization(new AccountCreator(dac),new LoginHandler(dac));
+            var auto = new Authorization(new AccountCreator(dac), new LoginHandler(dac));
             var player = auto.Authorize();
             var gameInfo = new GameData();
-            var game = new GameModel(player,gameInfo,new PlayerRepository());
+            var game = new GameModel(player, new PlayerRepository(), gameInfo);
             var view = new GameView(game);
             game.PlayGame();
             Console.ReadKey();

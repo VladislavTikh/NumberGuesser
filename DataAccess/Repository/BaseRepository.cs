@@ -15,7 +15,7 @@ namespace DataAccess.Models
     /// Base class of repository
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class BaseRepository<T>:IBaseRepository<T> where T : BaseModel
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseModel
     {
         #region Private Members
         private string ApplicationDirectory = Environment.CurrentDirectory;
@@ -39,10 +39,10 @@ namespace DataAccess.Models
         #region Operations with objects of repo
         public void Save(T model)
         {
-            JsonSerializer<T>.Serialize(model,CreateFullPath(model.ID));         
+            JsonSerializer<T>.Serialize(model, CreateFullPath(model.ID));
         }
-       
-        public T Get (long id)
+
+        public T Get(long id)
         {
             var path = CreateFullPath(id);
             if (!File.Exists(path))

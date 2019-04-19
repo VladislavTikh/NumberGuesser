@@ -1,4 +1,5 @@
-﻿using NumberGuesser.Model;
+﻿using DataAccess.Models;
+using NumberGuesser.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

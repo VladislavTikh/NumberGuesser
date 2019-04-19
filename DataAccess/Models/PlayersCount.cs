@@ -12,6 +12,6 @@ namespace DataAccess.Models
     /// </summary>
     public class PlayersCount : BaseModel
     {
-        public int Count {get;set;}
+        public int Count { get; set; }
     }
 }

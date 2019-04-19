@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NumberGuesser.Model
 {
-    public class GameData
+    public class GameData:IGameData
     {
         #region Public Properties
         /// <summary>
@@ -33,20 +33,20 @@ namespace NumberGuesser.Model
             MaxNumber = InputHandler.GetCorrectNumber(new MinValueValidator(MinNumber));
             Console.WriteLine("Enter you number");
             GuessedNumber = InputHandler.GetCorrectNumber(new MinMaxValueValidator(MinNumber, MaxNumber));
-            Attempts = CountAttempts();
+            Attempts = CountAttempts(MaxNumber,MinNumber);
         }
         /// <summary>
         /// logN attempts to win in game
         /// </summary>
         /// <returns></returns>
-        private int CountAttempts()
+        internal int CountAttempts(int maxNumber, int minNumber)
         {
-            var range = MaxNumber - MinNumber + 1;
+            var range = maxNumber - minNumber + 1;
             var choices = 2;
             var attempts = 1;
             while (range > choices)
             {
-                range /= 2;
+                choices *= 2;
                 attempts++;
             }
             return attempts;
